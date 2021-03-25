@@ -33,7 +33,8 @@ if (!stats.isFile()) {
 }
 
 
-//-------------------------------------------------------------------------//
+//----------------------CHECK PARAMETRE 2----------------------------------//
+// check si notre chemin où nous allons collé existe bien 
 let checking = destinationName.split('/').map((a) => a)
 let pathPasted = ""
 for (let i = 0; i < checking.length - 1; i++) {
@@ -43,8 +44,6 @@ for (let i = 0; i < checking.length - 1; i++) {
     process.exit(1)
   }
 }
-
-//----------------------CHECK PARAMETRE 2----------------------------------//
 
 // check if the 3rd parameter is an existing directory/file if not paste it in the current directory
 if (!fs.existsSync(destinationName)) {
