@@ -40,7 +40,7 @@ if (!stats.isFile(process.argv[FILE])) {
 content = fs.readFileSync(process.argv[FILE], 'utf-8').split('\n')
 let contentToDisplay = ''
 for (let i = content.length - n; i < content.length; i++) {
-  contentToDisplay += content[i] + '\n'
+   i + 1 < content.length ? contentToDisplay += content[i] + '\n' : contentToDisplay += content[i]
 }
 
 console.log(contentToDisplay)
