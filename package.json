@@ -1,0 +1,11 @@
+{
+  "name": "exo-fs-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/johnfr14/exo-fs-api.git",
+  "author": "johnfr14 <jonathan.alyra@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
