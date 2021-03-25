@@ -2,6 +2,13 @@ const fs = require('fs')
 const readline = require('readline-sync')
 
 
+// check if command line is well 
+if (process.argv.length !== 4) {
+  console.log('Veullez ne mettre que "Le fichier à copié" et "la destination où il sera copié"\n')
+  console.log('Example: node cp.js leFichieràcopier.js ../onLeColleIci.js ')
+  process.exit(1)
+}
+
 // recupere nos parametre dans 2 variable distinct
 let srcName = process.argv[2]
 if (srcName.split('/').length > 1) {
@@ -9,12 +16,6 @@ if (srcName.split('/').length > 1) {
 }
 let destinationName = process.argv[3] === '.' ? srcName : process.argv[3]  // on sait tous ce que signifie ce petit point tout mimi <3 si il n'est pas present on garde la destination tel quelle
 
-// check if command line is well 
-if (process.argv.length !== 4) {
-  console.log('Veullez ne mettre que "Le fichier à copié" et "la destination où il sera copié"\n')
-  console.log('Example: node cp.js leFichieràcopier.js ../onLeColleIci.js ')
-  process.exit(1)
-}
 
 //-------------------- CHECK PARAMETRE 1-----------------------------------//
 
@@ -30,10 +31,18 @@ if (!stats.isFile()) {
   console.log(`${process.argv[2]} n\'est pas un fichier`)
   process.exit(1)
 }
+
+
 //-------------------------------------------------------------------------//
-
-
-
+let checking = destinationName.split('/').map((a) => a)
+let pathPasted = ""
+for (let i = 0; i < checking.length - 1; i++) {
+  pathPasted += checking[i] + '/'
+  if (!fs.existsSync(pathPasted)) {
+    console.log(`Désoler ${pathPasted} n\'existe pas`)
+    process.exit(1)
+  }
+}
 
 //----------------------CHECK PARAMETRE 2----------------------------------//
 
