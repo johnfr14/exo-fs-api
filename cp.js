@@ -16,7 +16,7 @@ if (srcName.split('/').length > 1) {
 }
 let destinationName = process.argv[3] === '.' ? srcName : process.argv[3]  // on sait tous ce que signifie ce petit point tout mimi <3 si il n'est pas present on garde la destination tel quelle
 
-
+ 
 //-------------------- CHECK PARAMETRE 1-----------------------------------//
 
 // check if the path to copy exist
@@ -34,7 +34,8 @@ if (!stats.isFile()) {
 
 
 //----------------------CHECK PARAMETRE 2----------------------------------//
-// check si notre chemin où nous allons collé existe bien 
+
+// check si notre chemin où nous allons collé notre nouveau fichier existe bien 
 let checking = destinationName.split('/').map((a) => a)
 let pathPasted = ""
 for (let i = 0; i < checking.length - 1; i++) {
