@@ -33,7 +33,7 @@ if (process.argv.length === 4) {
       console.log(`${countChar} ${process.argv[FILE]}`)
       break
     default:
-      console.log('Pour l\'utilisation d\'un flag veuillez mettre en premier parametre \["-l", "-w", "-c"\] puis le nom du fichier')
+      console.log('Pour l\'utilisation d\'un flag veuillez mettre en premier parametre ["-l", "-w", "-c"] puis le nom du fichier')
   }
   process.exit(1)
 }
