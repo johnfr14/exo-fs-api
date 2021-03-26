@@ -24,7 +24,7 @@ if (!stats.isFile(process.argv[i])) {
   process.exit(1)
 }
 
-content += fs.readFileSync(process.argv[i], 'utf-8') + '\n'
+content += i + 1 > process.argv.length ? fs.readFileSync(process.argv[i], 'utf-8') + '\n' : fs.readFileSync(process.argv[i], 'utf-8')
 
 }
 
