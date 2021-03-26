@@ -16,20 +16,20 @@ if (!fs.existsSync(FILE)) {
 
 // Recuperation du contenu du fichier
 const TEXT = fs.readFileSync(FILE, 'utf-8')
+let countLine = TEXT.split("\n").length
+let countWord = TEXT.split(" ").length
+let countChar = TEXT.split("").length
 
 // Si Flag le est activé
 if (process.argv.length === 4) {
   switch (process.argv[2]) {
     case '-l':
-      let countLine = TEXT.split("\n").length
       console.log(`${countLine} ${FILE}`)
       break
     case '-w':
-      let countWord = TEXT.split(" ").length
       console.log(`${countWord} ${FILE}`)
       break
     case '-c':
-      let countChar = TEXT.split("").length
       console.log(`${countChar} ${FILE}`)
       break
     default:
@@ -39,8 +39,4 @@ if (process.argv.length === 4) {
 }
 
 // Si le Flag n'est pas activé
-let countLine = TEXT.split("\n").length
-let countWord = TEXT.split(" ").length
-let countChar = TEXT.split("").length
-
 console.log(`${countLine} ${countWord} ${countChar} ${FILE}`)
