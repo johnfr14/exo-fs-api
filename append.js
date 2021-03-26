@@ -1,5 +1,6 @@
 const fs = require('fs')
 const readline = require('readline-sync')
+const FILE  = process.argv[process.argv.length - 1]
 
 // check if command line is well 
 if (process.argv.length < 4) {
@@ -27,12 +28,14 @@ for (let i = 2; i < process.argv.length - 1; i++) {
   }
   contentToCopy += fs.readFileSync(process.argv[i])
 }
+
+
 // check if the file we want to past in already exist
 // if yes then the user will be able to choose to add it or not
-if (fs.existsSync(process.argv[process.argv.length - 1])) {
-  console.log(`${process.argv[process.argv.length - 1]} existe déjà`)
+if (fs.existsSync(FILE)) {
+  console.log(`${FILE} existe déjà`)
   let answer = readline.question('Voulez vous ajouter ?\nyes [y]\nno [n]\nVotre réponse : ')
   answer === 'y' ? '' : process.exit(1)
 }
 
-fs.appendFileSync(process.argv[process.argv.length - 1],contentToCopy)
+fs.appendFileSync(FILE,contentToCopy)

@@ -3,9 +3,6 @@ if (process.argv.length < 3) {
   process.exit(1)
 }
 
-let echo = []
-for (let i = 2; i <= process.argv.length; i++) {
-  echo.push(process.argv[i])
-}
+let [,coucou, ...echo] = process.argv
 
-console.log(echo.join(' '))
+console.log(echo.join(' '));

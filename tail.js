@@ -37,6 +37,8 @@ if (!stats.isFile(FILE)) {
   process.exit(1)
 }
 
+
+
 content = fs.readFileSync(FILE, 'utf-8').split('\n')
 let contentToDisplay = ''
 for (let i = content.length - n; i < content.length; i++) {
