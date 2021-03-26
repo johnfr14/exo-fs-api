@@ -1,6 +1,6 @@
 const fs = require('fs')
-let n = 10                                          //index qui sera déterminé par l'utilisateur si flag demandé -n
-const FILE = process.argv.length - 1                //cible toujours notre fichier si le flag est appellée
+let n = 10                                                         //index qui sera déterminé par l'utilisateur si flag demandé -n
+const FILE = process.argv[process.argv.length - 1]                //cible toujours notre fichier si le flag est appellée
 
 // check if command line is well 
 if (process.argv.length < 3 || process.argv.length > 5) {
@@ -24,20 +24,20 @@ if (process.argv.length === 5){
 }
 
 // check if the path exist
-if (!fs.existsSync(process.argv[FILE])) {
-  console.log(`Error: ${process.argv[FILE]} n'existe pas`)
+if (!fs.existsSync(FILE)) {
+  console.log(`Error: ${FILE} n'existe pas`)
   process.exit(1)
 }
 
 //check if the value is a file or a directory
-const stats = fs.statSync(process.argv[FILE])
+const stats = fs.statSync(FILE)
 
-if (!stats.isFile(process.argv[FILE])) {
-  console.log(`${process.argv[FILE]} n\'est pas un fichier`)
+if (!stats.isFile(FILE)) {
+  console.log(`${FILE} n\'est pas un fichier`)
   process.exit(1)
 }
 
-content = fs.readFileSync(process.argv[FILE], 'utf-8').split('\n')
+content = fs.readFileSync(FILE, 'utf-8').split('\n')
 let contentToDisplay = ''
 for (let i = content.length - n; i < content.length; i++) {
    i + 1 < content.length ? contentToDisplay += content[i] + '\n' : contentToDisplay += content[i]
