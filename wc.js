@@ -17,6 +17,7 @@ if (!fs.existsSync(process.argv[FILE])) {
 // Recuperation du contenu du fichier
 const TEXT = fs.readFileSync(process.argv[FILE], 'utf-8')
 
+// Si Flag le est activé
 if (process.argv.length === 4) {
   switch (process.argv[2]) {
     case '-l':
@@ -37,6 +38,7 @@ if (process.argv.length === 4) {
   process.exit(1)
 }
 
+// Si le Flag n'est pas activé
 let countLine = TEXT.split("\n").length
 let countWord = TEXT.split(" ").length
 let countChar = TEXT.split("").length
