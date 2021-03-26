@@ -3,7 +3,7 @@ const FILE = process.argv[process.argv.length - 1]
 
 // check if command line is well 
 if (process.argv.length < 3 || process.argv.length > 4) {
-  process.argv.length > 4 ? console.log('Pour l\'utilisation d\'un flag veuillez mettre en premier parametre \["-l", "-w", "-c"\] puis le nom du fichier') : '' 
+  process.argv.length > 4 ? console.log('Pour l\'utilisation d\'un flag veuillez mettre en premier parametre ["-l", "-w", "-c"] puis le nom du fichier') : '' 
   console.log('Veuillez mettre un fichier en parametre')
   process.exit(1)
 }

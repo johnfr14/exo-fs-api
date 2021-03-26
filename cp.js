@@ -9,10 +9,10 @@ if (process.argv.length !== 4) {
   process.exit(1)
 }
 
-// recupere nos parametre dans 2 variable distinct
+// On recupere nos parametres dans 2 variables distinct
 let srcName = process.argv[2]
 if (srcName.split('/').length > 1) {
-  srcName = srcName.split('/').pop()         // on recurer le nom du fichier à copié dans le cas où nous ne précisons pas le nouveau nom lors du collage (il le prendra par default alors)
+  srcName = srcName.split('/').pop()         // on recupere le nom du fichier à copié dans le cas où nous ne précisons pas le nouveau nom lors du collage (il le prendra par default alors)
 }
 let destinationName = process.argv[3] === '.' ? srcName : process.argv[3]  // on sait tous ce que signifie ce petit point tout mimi <3 si il n'est pas present on garde la destination tel quelle
 
