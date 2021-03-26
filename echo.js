@@ -3,6 +3,6 @@ if (process.argv.length < 3) {
   process.exit(1)
 }
 
-let [,coucou, ...echo] = process.argv
+let [ , , ...echo] = process.argv // recupere les commandes passées en parametres sans les 2 premieres 
 
 console.log(echo.join(' '));
